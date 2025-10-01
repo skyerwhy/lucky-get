@@ -76,7 +76,8 @@
 
         .container {
             width: 100%;
-            max-width: 400px;
+            max-width:-
+400px;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -235,6 +236,15 @@
             margin-top: 10px;
         }
 
+        .instruction-text {
+            font-size: 1rem;
+            color: #e0aaff;
+            margin: 50px 0 25px 0;
+            padding: 0 15px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -261,7 +271,7 @@
 
         <div id="signalScreen" class="screen">
             <button class="back-btn">←</button>
-            <p>Нажмите на кнопку, чтобы получить коэффициент</p>
+            <p class="instruction-text">Нажмите на кнопку, чтобы получить коэффициент</p>
             
             <button id="startGameBtn" class="btn">Начать игру</button>
             
@@ -272,7 +282,7 @@
                 <div class="progress" id="progressBar"></div>
             </div>
             
-            <p class="info-text">Используйте этот коэффициент в игре Lucky Get</p>
+            <p class="info-text">Используйте этот коэффициент в игре Lucky Jet</p>
         </div>
     </div>
 
