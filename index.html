@@ -76,8 +76,7 @@
 
         .container {
             width: 100%;
-            max-width:-
-400px;
+            max-width: 400px;
             text-align: center;
             position: relative;
             z-index: 1;
@@ -343,11 +342,21 @@
                 }, 2000);
             }
             
-            // Генерация случайного коэффициента от 1.5 до 6.7
+            // Генерация случайного коэффициента с приоритетом меньших значений
             function generateCoefficient() {
-                const min = 1.5;
-                const max = 6.7;
-                const coefficient = (Math.random() * (max - min) + min).toFixed(2);
+                // 80% вероятности получить коэффициент до 2.5
+                // 20% вероятности получить коэффициент от 2.5 до 5.6
+                const isLowCoefficient = Math.random() < 0.8;
+                
+                let coefficient;
+                if (isLowCoefficient) {
+                    // Коэффициенты от 1.2 до 2.5
+                    coefficient = (Math.random() * (2.5 - 1.2) + 1.2).toFixed(2);
+                } else {
+                    // Коэффициенты от 2.5 до 5.6
+                    coefficient = (Math.random() * (5.6 - 2.5) + 2.5).toFixed(2);
+                }
+                
                 return `x${coefficient}`;
             }
             
